@@ -6,6 +6,10 @@ def jokenpo():
     print('Este é um script básico do jogo Pedra, Papel ou Tesoura em CLI,\n'
           'no qual você jogará com o computador!')
 
+    __version__ = '0.0.1-snapshost'
+
+    print(f'Versão: {__version__}')
+
     itens = ('Pedra', 'Papel', 'Tesoura')
     computador = randint(0, 2)
     print(f'{itens[computador]}')
@@ -46,6 +50,10 @@ def jokenpo():
               f'O jogador escolheu: {itens[jogador]}.\n'
               f'O computador escolheu: {itens[computador]}.')
 
+    jogardenovo()
+
+
+def jogardenovo():
     print('Deseja tentar de novo? Digite /sim ou /não')
     jogador = input('Comando: /')
     jogador = jogador.lower()

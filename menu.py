@@ -1,17 +1,21 @@
 import jokenpo
+import forca
 
 decisor = True
+
 
 def menu():
     print('Estes minijogos são feitos para serem jogados em CLI.')
 
     print('Escolha um minijogo:\n'
-          '- /jokenpo: Pedra, Papel ou Tesoura;')
+          '- /jokenpo: Pedra, Papel ou Tesoura;\n'
+          '- /forca: Jogo da Forca.')
     iniciador = input('Comando: /')
 
     if iniciador == 'jokenpo' or iniciador == 'j':
         jokenpo.jokenpo()
-
+    elif iniciador == 'forca' or iniciador == 'f':
+        forca.forca()
     else:
         print('Comando inválido. Tente novamente.')
         menu()
