@@ -1,27 +1,26 @@
-import os
 from random import randrange
 import json
 
 global palavra
 __version__ = '1.0.0 (beta)'
 
+
 def forca():
     global palavra
-    print('Este é um script básico do jogo da Forca em CLI, onde\n'
-          'você jogará com o computador (ou com alguém junto a você)!\n'
-          'Esta é uma produção que pode ter melhorias.')
+    print('-> Este é um script básico do jogo da Forca em\n'
+          'CLI, onde você jogará com o computador\n'
+          '(ou com alguém junto a você)!')
     decisor = True
 
     print(f'Versão: {__version__}')
-
     while decisor:
         numero_de_palavras_aleatorias = 30
-        print(f'O computador pode sortear uma entre {numero_de_palavras_aleatorias} palavras aleatórias\n'
-              f'se você quiser. Dessa forma você quem terá que adivinhá-la.\n'
-              'Digite /sim ou /não (se você não quiser, deverá jogar\n'
-              'com outra pessoa)')
-        decisor = input('Comando: /')
-        decisor = decisor.lower()
+        print(f'-> O computador pode sortear uma entre {numero_de_palavras_aleatorias}\n'
+              f'palavras aleatórias se você quiser.\n'
+              f'-> Dessa forma você quem terá que adivinhá-la.\n'
+              'Digite /sim ou /não (se você não quiser, deverá\n'
+              'jogar com outra pessoa!)')
+        decisor = input('Comando: /').lower()
         if decisor == 'sim' or decisor == 's':
             with open('recursos/forca/palavras.json', 'r', encoding='utf-8') as palavras:
                 dados = json.load(palavras)
@@ -31,10 +30,15 @@ def forca():
                 palavra = f'{sorteio}'
             decisor = False
         elif decisor == 'não' or decisor == 'nao' or decisor == 'n':
-            palavra = input('Digite a palavra com a qual irá brincar: ')
+            palavra = input('\n'
+                            '-> Vamos nessa.\n'
+                            '-> Por enquanto, só um de vocês deve\n'
+                            'saber a palavra que digitar abaixo, ok?\n'
+                            'Digite-a: ')
             decisor = False
         else:
             print('Comando inválido. Tente novamente.')
+        print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
     conclusao_palavra = '_' * len(palavra)
     palavra = palavra.upper()
     adivinhado = False
@@ -171,8 +175,7 @@ def jogardenovo():
     jogador = input('Comando: /')
     jogador = jogador.lower()
     if jogador == 'sim' or jogador == 's':
+        print('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n')
         forca()
     else:
         exit()
-
-
