@@ -1,5 +1,6 @@
 import jokenpo
 import forca
+import velha
 
 decisor = True
 
@@ -9,13 +10,16 @@ def menu():
 
     print('Escolha um minijogo:\n'
           '- /jokenpo: Pedra, Papel ou Tesoura;\n'
-          '- /forca: Jogo da Forca.')
+          '- /forca: Jogo da Forca;\n'
+          '- /velha: Jogo da Velha.')
     iniciador = input('Comando: /')
 
     if iniciador == 'jokenpo' or iniciador == 'j':
         jokenpo.jokenpo()
     elif iniciador == 'forca' or iniciador == 'f':
         forca.forca()
+    elif iniciador == 'velha' or iniciador == 'v':
+        velha.velha()
     else:
         print('Comando inválido. Tente novamente.')
         menu()

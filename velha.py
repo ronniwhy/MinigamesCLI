@@ -3,7 +3,7 @@ from random import randrange
 _version_ = '0.0.1 (alpha)'
 
 
-def jogodavelha():
+def velha():
     print('Este é um script básico do jogo da velha, onde\n'
           'você jogará com o computador (ou com alguém junto a você)!\n'
           'Esta é uma produção que pode ter melhorias.')
